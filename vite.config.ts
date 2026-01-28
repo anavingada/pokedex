@@ -9,7 +9,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import './src/assets/styles/media-queries.scss';`
+        additionalData: `@use '@/assets/styles/media-queries' as *;`
       }
     }
   },

@@ -1,14 +1,19 @@
 {
   "files": [],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    },
-    {
-      "path": "./tsconfig.app.json"
-    }
-  ],
+  "references": [{ "path": "./tsconfig.node.json" }, { "path": "./tsconfig.app.json" }],
   "compilerOptions": {
-    "module": "NodeNext"
+    // Module system for Node/EcmaScript interop
+    "module": "NodeNext",
+
+    // JS for Vite / Vue 3
+    "target": "ESNext",
+
+    // Strictness options
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+
+    // Silence deprecation warnings from TS 6+
+    "ignoreDeprecations": "6.0"
   }
 }

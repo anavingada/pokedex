@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import PokemonView from '@/views/PokemonView.vue'
 import NotFound from '@/components/NotFound.vue'
+import ResourcesView from '@/views/ResourcesView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -16,6 +17,11 @@ const router = createRouter({
       name: 'pokemon-detail',
       component: PokemonView,
       props: (route) => ({ pokemonName: route.params.pokemonName })
+    },
+    {
+      path: '/resources',
+      name: 'view-resources',
+      component: ResourcesView
     },
     {
       path: '/:pathMatch(.*)*', // Catch-all route for 404

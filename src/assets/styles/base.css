@@ -3,10 +3,11 @@
   --logo-dark-blue: #3c5aa6;
   --logo-light-blue: #2a75bb;
   --logo-yellow-shadow: #c7a008;
-  --logo-yellow-shadow-opacity: hsla(48, 96%, 41%, 0.1);
+  --logo-yellow-shadow-opacity: hsl(48deg 96% 41% / 10%);
   --logo-yellow: #ffcb05;
-  --text-black: #222222;
+  --text-black: #222224;
   --disabled-color: #eee;
+  --color-background: #fff;
 }
 
 *,
@@ -19,27 +20,21 @@
 
 body {
   min-height: 100vh;
-  color: var(--color-text);
   background: var(--color-background);
+  color: var(--text-black);
+  font-family: 'Open Sans', Roboto, 'Helvetica Neue', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
   transition:
     color 0.5s,
     background-color 0.5s;
-  line-height: 1.6;
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
-  font-size: 15px;
-  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility;
+}
+
+#page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }

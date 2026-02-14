@@ -1,7 +1,7 @@
-import { fileURLToPath, URL } from 'node:url'
-
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import { resolve, dirname } from 'node:path'
+import { fileURLToPath, URL } from 'node:url'
 import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
 
 // https://vitejs.dev/config/
@@ -15,7 +15,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@use '@/assets/styles/media-queries' as *;`
+        additionalData: '@use "@/assets/styles/media-queries" as *;'
       }
     }
   },

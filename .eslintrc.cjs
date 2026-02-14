@@ -33,7 +33,7 @@ module.exports = {
         multiline: { max: 1 }
       }
     ],
-    'vue/html-indent': ['error', 2]
+    'vue/html-indent': 'off'
   },
   overrides: [
     {

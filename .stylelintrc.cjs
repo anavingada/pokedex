@@ -1,0 +1,93 @@
+module.exports = {
+  root: true,
+  overrides: [
+    {
+      files: ['**/*.vue'],
+      customSyntax: 'postcss-html'
+    },
+    {
+      files: ['**/*.scss'],
+      customSyntax: 'postcss-scss'
+    }
+  ],
+  extends: ['stylelint-config-standard-scss', 'stylelint-config-recess-order'],
+  plugins: ['stylelint-order', 'stylelint-scss'],
+  rules: {
+    'order/properties-order': [
+      [
+        'position',
+        'top',
+        'right',
+        'bottom',
+        'left',
+        'z-index',
+        'display',
+        'flex',
+        'grow',
+        'shrink',
+        'flex-basis',
+        'flex-direction',
+        'flex-wrap',
+        'justify-content',
+        'align-items',
+        'align-content',
+        'order',
+        'float',
+        'clear',
+        'overflow',
+        'overflow-x',
+        'overflow-y',
+        'visibility',
+        'opacity',
+        'box-sizing',
+        'width',
+        'min-width',
+        'max-width',
+        'height',
+        'min-height',
+        'max-height',
+        'margin',
+        'margin-top',
+        'margin-right',
+        'margin-bottom',
+        'margin-left',
+        'padding',
+        'padding-top',
+        'padding-right',
+        'padding-bottom',
+        'padding-left',
+        'border',
+        'border-width',
+        'border-style',
+        'border-color',
+        'border-radius',
+        'background',
+        'background-color',
+        'background-image',
+        'background-position',
+        'background-size',
+        'background-repeat',
+        'color',
+        'font',
+        'font-family',
+        'font-size',
+        'font-weight',
+        'line-height',
+        'text-align',
+        'text-decoration',
+        'text-transform',
+        'white-space',
+        'word-break',
+        'letter-spacing',
+        'transition',
+        'animation'
+      ],
+      { unspecified: 'bottomAlphabetical' }
+    ],
+
+    // SCSS-specific
+    'scss/dollar-variable-pattern': '^[_]?[a-z][a-zA-Z0-9]*$',
+    'scss/at-extend-no-missing-placeholder': true
+  },
+  ignoreFiles: ['**/node_modules/**', 'dist/**']
+}

@@ -1,33 +1,23 @@
-<!-- NOTES
-
-This component is a reusable to display list, ordered and unordered. -->
-
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  name: 'ItemsList',
-  props: {
-    data: { type: Array, required: false, default: () => [] },
-    ordered: {
-      type: Boolean,
-      required: false,
-      default: false
-    }
-  }
-})
-</script>
-
 <template>
   <component :is="ordered ? 'ol' : 'ul'" :class="{ list: true, 'list--ordered': ordered }">
-    <li v-for="(item, index) in data" :key="index" class="list__item">{{ item }}</li>
+    <li v-for="(item, index) in list" :key="index" class="list__item">{{ item }}</li>
   </component>
 </template>
+
+<script lang="ts" setup>
+const props = defineProps<{
+  list: string[]
+  ordered?: boolean
+}>()
+
+const ordered = props.ordered ?? false
+</script>
 
 <style lang="scss" scoped>
 .list {
   display: flex;
   flex-direction: column;
+  width: 100%;
   gap: 8px;
 
   &--ordered {
@@ -48,8 +38,8 @@ export default defineComponent({
   }
 
   &__item {
-    font-size: 16px;
     color: var(--text-black);
+    font-size: 16px;
   }
 }
 </style>

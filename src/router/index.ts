@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
-import PokemonView from '@/views/PokemonView.vue'
+import PokemonDetailView from '@/views/PokemonDetailView.vue'
 import ResourcesView from '@/views/ResourcesView.vue'
 import ErrorView from '@/views/ErrorView.vue'
 
@@ -9,13 +9,13 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'view-home',
       component: HomeView
     },
     {
       path: '/:pokemonName',
-      name: 'pokemon-detail',
-      component: PokemonView,
+      name: 'view-pokemon-detail',
+      component: PokemonDetailView,
       props: (route) => ({ pokemonName: route.params.pokemonName })
     },
     {

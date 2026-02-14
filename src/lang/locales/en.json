@@ -1,0 +1,52 @@
+{
+  "catalog": {
+    "title": "Welcome to Pokédex"
+  },
+
+  "cta": {
+    "exploreCatalog": "Explore the catalog",
+    "resources": "Resources"
+  },
+
+  "error": {
+    "oops": "Oops!",
+    "pokemonNotFound": "The pokémon you are searching for does not exist."
+  },
+
+  "footer": {
+    "projectName": "Pokédex Project"
+  },
+
+  "general": {},
+
+  "images": {
+    "emptyPokeball": "Empty Pokeball",
+    "pokemonLogo": "Pokémon Logo"
+  },
+
+  "pokemonDetail": {
+    "baseExperience": "Base Experience",
+    "gallery": "Gallery",
+    "height": "Height",
+    "heldItems": "Held Items",
+    "hiddenAbilities": "Abilities (hidden)",
+    "id": "ID",
+    "moves": "Moves",
+    "name": "Name",
+    "nonHiddenAbilities": "Abilities (non-hidden)",
+    "order": "Order",
+    "types": "Types",
+    "unknown": "Unknown",
+    "weight": "Weight"
+  },
+
+  "resources": {
+    "pokeApi": "Poké API",
+    "pokeballEmpty": "Empty pokeball image",
+    "pokeballImage": "Pokeball image",
+    "pokemonFavicon": "Pokeball favicon",
+    "pokemonLogo": "Pokemon logo",
+    "pokemonQuestionMark": "Pokemon question mark image",
+    "title": "Resources of the project"
+  }
+}

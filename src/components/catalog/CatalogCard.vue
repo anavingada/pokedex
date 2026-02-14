@@ -2,7 +2,7 @@
   <article class="catalog-card" @click="goToPokemonDetailPage()">
     <TheImage
       :data="{
-        name: props.pokemon.name,
+        alt: `Image of pokémon ${formatPokemonName(props.pokemon.name)}`,
         id: pokemonId
       }"
       class="catalog-card__image"

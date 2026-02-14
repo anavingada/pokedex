@@ -4,7 +4,12 @@
       <div class="not-found__section--error__info">
         <h1>
           <span>4</span>
-          <img :alt="$t('images.emptyPokeball')" src="@/assets/images/empty-pokeball.png" />
+          <TheImage
+            :data="{
+              alt: $t('images.emptyPokeball'),
+              source: emptyPokeballImage
+            }"
+          />
           <span>4</span>
         </h1>
         <div class="oval"></div>
@@ -26,7 +31,10 @@
 </template>
 
 <script lang="ts" setup>
+import emptyPokeballImage from '@/assets/images/empty-pokeball.png'
+
 import ButtonLink from '@/components/ui/ButtonLink.vue'
+import TheImage from '@/components/ui/TheImage.vue'
 </script>
 
 <style lang="scss" scoped>

@@ -2,9 +2,11 @@
   <footer class="footer">
     <section class="footer__section">
       <div class="footer__section__project">
-        <img
-          :alt="$t('images.pokemonLogo')"
-          src="@/assets/images/pokeball.png"
+        <TheImage
+          :data="{
+            alt: $t('images.pokeball'),
+            source: pokeballImage
+          }"
           class="footer__section__project__logo"
         />
         <p class="footer__section__project__name">{{ $t('footer.projectName') }}</p>
@@ -19,7 +21,10 @@
 </template>
 
 <script lang="ts" setup>
+import pokeballImage from '@/assets/images/pokeball.png'
+
 import ButtonLink from '@/components/ui/ButtonLink.vue'
+import TheImage from '@/components/ui/TheImage.vue'
 </script>
 
 <style lang="scss" scoped>

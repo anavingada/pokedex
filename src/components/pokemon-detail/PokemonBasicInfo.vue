@@ -4,7 +4,7 @@
     <div class="pokemon-basic-info__subsection--image">
       <TheImage
         :data="{
-          name: pokemonName,
+          alt: `Image of pokémon ${formatPokemonName(pokemonName)}`,
           id: pokemonId
         }"
         class="pokemon-basic-info__subsection--image__image"

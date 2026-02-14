@@ -4,10 +4,12 @@
       <nav v-if="showNav" class="nav">
         <button-link to="/">
           <template #image>
-            <img
-              :alt="$t('images.pokemonLogo')"
+            <TheImage
+              :data="{
+                alt: $t('images.pokemonLogo'),
+                source: pokemonLogo
+              }"
               class="logo"
-              src="@/assets/images/pokemon-logo.svg"
             />
           </template>
         </button-link>
@@ -18,7 +20,11 @@
 
 <script lang="ts" setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+
+import pokemonLogo from '@/assets/images/pokemon-logo.svg'
+
 import ButtonLink from '@/components/ui/ButtonLink.vue'
+import TheImage from '@/components/ui/TheImage.vue'
 
 const props = defineProps<{
   animated?: boolean

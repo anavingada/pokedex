@@ -1,27 +1,23 @@
 <template>
-  <img
-    :alt="`Image of pokémon ${formattedPokemonName}`"
-    :src="pokemonImage"
-    @error="onImageError"
-  />
+  <img :alt="props.data.alt" :src="pokemonImage" @error="onImageError" />
 </template>
 
 <script lang="ts" setup>
 import { computed } from 'vue'
 
-import { formatPokemonName } from '@/utils/pokemonName'
 import { setPokemonImage, onImageError } from '@/utils/pokemonImage'
 
+import DEFAULT_POKEMON_IMAGE from '@/assets/images/unknown-pokemon.png'
+
 const props = defineProps<{
-  data: { name: string; id: string | number }
+  data: { id?: string | number; alt: string; source?: string }
 }>()
 
 // Computed
-const pokemonImage = computed<string>(() => {
-  return setPokemonImage(props.data.id)
-})
-
-const formattedPokemonName = computed<string>(() => {
-  return formatPokemonName(props.data.name)
+const pokemonImage = computed<string>((): string => {
+  console.log(props.data.source)
+  if (props.data.source) return props.data.source
+  else if (props.data.id) return setPokemonImage(props.data.id)
+  else return DEFAULT_POKEMON_IMAGE
 })
 </script>

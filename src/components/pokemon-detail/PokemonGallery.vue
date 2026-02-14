@@ -2,12 +2,14 @@
   <section class="pokemon-gallery">
     <h4>{{ $t('pokemonDetail.gallery') }}:</h4>
     <div class="pokemon-gallery__items">
-      <img
+      <TheImage
         v-for="(image, index) in images"
         :key="index"
-        :alt="`${formatPokemonName(pokemonName)} image ${index + 1}`"
+        :data="{
+          alt: `${formatPokemonName(pokemonName)} image ${index + 1}`,
+          source: image
+        }"
         class="pokemon-gallery__items__image"
-        :src="image"
       />
     </div>
   </section>
@@ -15,6 +17,8 @@
 
 <script lang="ts" setup>
 import { formatPokemonName } from '@/utils/pokemonName'
+
+import TheImage from '@/components/ui/TheImage.vue'
 
 defineProps<{
   pokemonName: string

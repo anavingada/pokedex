@@ -2,10 +2,12 @@
   <header class="header">
     <button-link to="/">
       <template #image>
-        <img
-          :alt="$t('images.pokemonLogo')"
+        <TheImage
+          :data="{
+            alt: $t('images.pokemonLogo'),
+            source: pokemonLogo
+          }"
           class="header__logo"
-          src="@/assets/images/pokemon-logo.svg"
         />
       </template>
     </button-link>
@@ -14,7 +16,10 @@
 </template>
 
 <script lang="ts" setup>
+import pokemonLogo from '@/assets/images/pokemon-logo.svg'
+
 import ButtonLink from '@/components/ui/ButtonLink.vue'
+import TheImage from '@/components/ui/TheImage.vue'
 </script>
 
 <style lang="scss" scoped>

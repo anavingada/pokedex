@@ -5,7 +5,7 @@ It allows resetting the values.  -->
 
 <script lang="ts">
 import { defineComponent, ref, watch } from 'vue'
-import { usePokemonStore } from '@/stores/pokemon'
+import { usePokemonStore } from '@/stores/catalog.store'
 
 export default defineComponent({
   name: 'SearchBy',
@@ -99,9 +99,9 @@ export default defineComponent({
     <h2>Search Pokémons</h2>
     <div class="search-by__actions">
       <div class="search-by__actions__property">
-        <label for="property-select" class="search-by__actions__property__label"
-          >Select Property:</label
-        >
+        <label for="property-select" class="search-by__actions__property__label">
+          Select Property:
+        </label>
         <select
           id="property-select"
           v-model="selectedProperty"
@@ -114,16 +114,16 @@ export default defineComponent({
       </div>
 
       <div v-if="selectedProperty === 'name'" class="search-by__actions__name-input">
-        <label for="results-select" class="search-by__actions__name-input__label"
-          >Write the name of the pokemon:</label
-        >
+        <label for="results-select" class="search-by__actions__name-input__label">
+          Write the name of the pokemon:
+        </label>
         <div class="search-by__actions__name-input__search">
           <input
             v-model="searchQuery"
             placeholder="Search Pokémon"
             class="search-by__actions__name-input__search__input"
           />
-          <button @click="emitSearchQuery" class="search-by__actions__name-input__search__btn">
+          <button class="search-by__actions__name-input__search__btn" @click="emitSearchQuery">
             Search
           </button>
         </div>
@@ -131,9 +131,9 @@ export default defineComponent({
 
       <div v-else class="search-by__actions__option-select">
         <!-- Second select for displaying fetched results -->
-        <label for="results-select" class="search-by__actions__option-select__label"
-          >Select Result:</label
-        >
+        <label for="results-select" class="search-by__actions__option-select__label">
+          Select Result:
+        </label>
         <select
           id="results-select"
           v-model="selectedPropertyValue"
@@ -146,7 +146,7 @@ export default defineComponent({
         </select>
       </div>
     </div>
-    <button @click="resetSelections" class="search-by__actions__reset">Reset</button>
+    <button class="search-by__actions__reset" @click="resetSelections">Reset</button>
   </section>
 </template>
 
@@ -155,9 +155,9 @@ export default defineComponent({
   &__actions {
     display: flex;
     flex-direction: column;
-    gap: 32px;
     justify-content: space-evenly;
     align-items: center;
+    gap: 32px;
 
     @include size-m-up {
       flex-direction: row;
@@ -166,14 +166,15 @@ export default defineComponent({
     &__property {
       display: flex;
       flex-direction: column;
-      gap: 12px;
       width: 100%;
       max-width: 400px;
+      gap: 12px;
 
       &__label {
-        font-size: 18px;
         color: var(--text-black);
+        font-size: 18px;
       }
+
       &__select {
         padding: 6px 12px;
       }
@@ -182,36 +183,38 @@ export default defineComponent({
     &__name-input {
       display: flex;
       flex-direction: column;
-      gap: 12px;
       width: 100%;
       max-width: 400px;
+      gap: 12px;
 
       &__label {
-        font-size: 18px;
         color: var(--text-black);
+        font-size: 18px;
       }
+
       &__search {
         display: flex;
         flex-direction: row;
-        align-items: center;
-        gap: 12px;
         justify-content: space-between;
+        align-items: center;
         width: 100%;
         max-width: 400px;
+        gap: 12px;
 
         &__input {
-          padding: 6px 12px;
           width: 100%;
-        }
-        &__btn {
           padding: 6px 12px;
+        }
+
+        &__btn {
           display: flex;
-          align-items: center;
           justify-content: center;
-          color: var(--text-black);
-          background-color: var(--logo-yellow-shadow);
+          align-items: center;
+          padding: 6px 12px;
           border: 1px solid var(--logo-yellow-shadow);
           border-radius: 6px;
+          background-color: var(--logo-yellow-shadow);
+          color: var(--text-black);
 
           &:hover {
             background-color: var(--logo-yellow);
@@ -220,31 +223,34 @@ export default defineComponent({
         }
       }
     }
+
     &__option-select {
       display: flex;
       flex-direction: column;
-      gap: 12px;
       width: 100%;
       max-width: 400px;
+      gap: 12px;
 
       &__label {
-        font-size: 18px;
         color: var(--text-black);
+        font-size: 18px;
       }
+
       &__select {
         padding: 6px 12px;
       }
     }
+
     &__reset {
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       margin: 20px auto;
-      color: var(--text-black);
-      background-color: var(--logo-yellow-shadow);
-      border: 1px solid var(--logo-yellow-shadow);
       padding: 12px 24px;
+      border: 1px solid var(--logo-yellow-shadow);
       border-radius: 6px;
+      background-color: var(--logo-yellow-shadow);
+      color: var(--text-black);
 
       &:hover {
         background-color: var(--logo-yellow);
